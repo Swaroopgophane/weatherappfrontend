@@ -1,38 +1,969 @@
-.App {
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
+
+:root{
+    --commonbackground:#e7f2f8;
+    --paralabel:#09b3b9;
+    --btncolor:#0c2d48;
+    --paratint:#dcdae8;
+    --white:#fff;
+    --boxShadow:rgba(0, 0, 0, 0.252)0px 2px 10px 0px;
+  }
+
+
+  /*=================
+   Common style 
+   ==================*/
+
+   .common-page-container{
+    width: 100%;
+    min-height: 88vh;
+    padding-top: 70px;
+   }
+
+   .common-page-inner{
+    width: 60%;
+    margin: auto;
+    box-shadow: var(--boxShadow);
+    padding: 20px 40px 30px 40px;
+   }
+
+   .flex-container{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+   }
+
+
+  /*=================
+   Header style 
+   ==================*/
+
+  .header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--commonbackground);
+  }
+
+  .header .logo{
+    height: 40px;
+  }
+
+  .nav{
+    margin-left: auto;
+  }
+
+  .nav-links{
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav-links .nav-item{
+    font-size: 17px;
+    color: #000;
+  }
+
+  .mobile-nav{
+    display: none;
+  }
+
+/*=================
+   Home page style 
+   ==================*/
+
+   .home-page{
+    width: 100%;
+    min-height: 88vh;
+    background: linear-gradient(to left, #fff 50%,var(--commonbackground) 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .home-inner{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+   }
+
+   .home-content{
+    text-align: center;
+    width: 50%;
+   }
+
+   .home-para{
+    text-transform: uppercase;
+    color: var(--paralabel);
+    font-weight: 500;
+    font-size: 25px;
+   }
+
+   .home-head{
+    text-transform: capitalize;
+    margin: 10px 0px;
+   }
+
+   .home-label{
+    text-transform: capitalize;
+   }
+
+   .home-image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    
+   }
+
+   .home-image img{
+      width: 60%;
+   }
+
+
+
+   
+/*=================
+   Weather page style 
+   ==================*/
+
+   .weather-page{
+    width: 100%;
+    min-height: 88vh;
+    /* background: linear-gradient(#0586c6,#0a94a1); */
+    /* background: linear-gradient(#93bdd6,#3d7287); */
+    
+   }
+
+   .weather-container{
+    width: 60%;
+    margin: auto;
+    padding-top: 60px;
+   }
+
+   .weather-input{
+    position: relative;
+    width: 60%;
+    margin: auto;
+   }
+
+   .weather-input .input-field{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 17px;
+   }
+
+   .searchBtn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    padding: 5px 8px;
+    background: var(--btncolor);
+    color: #fff;
+    cursor: pointer;
+   }
+
+   .date-container{
+    text-align: center;
+    margin: 20px 0px;
+   }
+   
+   .date-container p{
+    color: var(--paratint);
+    font-size:22px;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.252);
+   }
+
+   .weather-output{
+    margin-top: 20px;
+   }
+
+   .city-section{
+    text-align: center;
+   }
+
+   .city-section .city-name{
+    font-size: 30px;
+    color: var(--white);
+   }
+
+   .temp-status{
+    color: #9fcbd5;
+    font-size: 30px;
+    margin-top: 10px;
+   }
+
+
+   .weather-info{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+   }
+
+   .weather-mood i{
+    font-size: 80px;
+    color: var(--white);
+   }
+
+   .weather-temp h2{
+    font-size: 60px;
+    color: var(--white);
+   }
+
+   .weather-extra-info{
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   }
+
+   .extra-info {
+    display: flex;
+    gap: 20px;
+   }
+   .extra-info i{
+    font-size: 20px;
+   }
+
+
+   .weather-footer{
+    /* display: flex;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 50px;
+    margin-top: 50px;
+    color: var(--white);
+   }
+
+   .w-footer-col{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+   }
+
+   .w-footer-icon i{
+    font-size: 35px;
+   }
+
+
+
+   /*=================
+   Register page and login page style 
+   ==================*/
+
+   .form-head{
+    text-transform: capitalize;
+    font-size: 35px;
+    margin-bottom: 20px;
+   }
+
+   .vertical-flex{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   }
+
+   .form-group{
+    position: relative;
+   }
+
+   .form-group i{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 25px;
+   }
+   
+   .form-group input{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    border: 1px solid #ded6d6;
+   }
+
+   .form-error{
+    color: #b70808;
+   }
+   
+
+   .submit-form-btn{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    background: var(--btncolor);
+    color: var(--white);
+    cursor: pointer;
+   }
+
+   .form-cols{
+    width: 50%;
+   }
+
+   .form-image img{
+    width: 100%;
+   }
+
+   .form-image-msg{
+    text-align: center;
+   }
+
+
+
+   /*=================
+   Contact page style 
+   ==================*/
+
+   .contact-info{
+    width: 80%;
+    margin:60px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-info-col{
+    width: 30%;
+    box-shadow: var(--boxShadow);
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    gap: 20px;
+}
+
+.contact-info-icon{
+    font-size: 20px;
+}
+
+.contact-info-text{
+    color: #4e4949;
+}
+
+
+.contact-form-container{
+  width: 60%;
+  margin:50px auto;
+  box-shadow: rgba(0, 0, 0, 0.16)0px 2px 10px 3px;
+  padding: 25px;
+}
+
+.contact-form-container h2{
+  font-size: 35px;
+}
+
+.contact-form-inner{
+  margin-top: 20px;
+}
+
+.contact_form_fields{
+  display: flex;
+  gap: 20px;
+}
+.contact_form_fields .input_field{
+  width: 100%;
+  border: none;
+  border: 1px solid #beb4b4;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 17px;
+}
+
+
+.contact-form-textarea{
+  margin-top: 20px;
+  
+}
+
+.contact-form-textarea .form-textarea{
+  width: 100%;
+  padding: 8px 10px;
+  outline: none;
+  border: none;
+  border: 1px solid #beb4b4;
+  resize: none;
+  font-size: 17px;
+}
+
+.contact-form-btn{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contact-form-btn .contact-btn{
+background: var(--btncolor);
+color: #fff;
+padding: 12px 20px;
+border: none;
+outline: none;
+margin-top: 15px;
+font-size: 17px;
+cursor: pointer;
+border-radius: 20px;
+transition: all .2s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Error page */
+
+
+.error-page{
+  width: 100%;
+  min-height: 88vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.error-content{
+  width: 60%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error-content img{
+  width: 100%;
 }
+
+.error-btn{
+  text-align: center;
+}
+
+.error-btn h2{
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.error-link{
+  background: var(--btncolor);
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*=================
+  media query
+   ==================*/
+
+   @media (min-width:0px) and (max-width:480px){
+
+    p{
+      font-size: 16px;
+    }
+
+    .header{
+      flex-direction: row;
+      position: relative;
+    }
+
+    .header .logo{
+      height: 30px;
+    }
+
+    .nav{
+      margin-top: 0px;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: var(--commonbackground);
+      z-index: 99;
+      transition: all .4s linear;
+      overflow: hidden;
+      max-height: 0px;
+    }
+
+    .mobile-nav-func{
+      max-height: 100vh;
+      padding-bottom: 20px;
+    }
+
+    .mobile-nav{
+      margin-left: auto;
+      display: block;
+    }
+
+    
+
+    .mobile-nav i{
+      font-size: 25px;
+    }
+    
+    .nav-links{
+      flex-direction: column;
+      text-align: center;
+    }
+
+
+    /* Home page */
+
+
+    .home-content .home-head{
+      font-size: 40px;
+    }
+
+    .home-para{
+      font-size: 20px;
+    }
+
+    .home-inner{
+      flex-direction: column;
+      padding: 50px 10px;
+      gap: 80px;
+    }
+
+    .home-content,.home-image{
+      width: 100%;
+    }
+
+    .home-image img{
+      width: 65%;
+    }
+
+
+
+    /* weather page */
+
+    .weather-page{
+      height: 100%;
+    }
+
+    .weather-container{
+      width: 90%;
+      padding-bottom: 50px;
+    }
+
+    .weather-input{
+      width: 100%;
+      
+     }
+
+     .weather-input .input-field{
+      font-size: 16px;
+     }
+
+     .weather-input .searchBtn{
+      font-size: 16px;
+     }
+
+     .weather-info{
+      flex-direction: column;
+     }
+
+     .weather-mood{
+      text-align: center;
+     }
+
+     .weather-temp{
+      text-align: center;
+     }
+
+    .weather-extra-info{
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .weather-footer{
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    .w-footer-col{
+      justify-content: center;
+    }
+
+
+    /* Register page */
+
+    .common-page-container{
+      padding-bottom: 50px;
+    }
+
+    .common-page-inner{
+      width: 90%;
+      padding: 20px 20px;
+    }
+
+    .flex-container{
+      flex-direction: column-reverse;
+    }
+
+    .form-head{
+      font-size: 30px;
+    }
+
+    .form-cols{
+      width: 100%;
+     }
+
+     .form-group input{
+      font-size: 16px;
+     }
+
+     .submit-form-btn{
+      font-size: 16px;
+     }
+
+
+     /* Contact page */
+
+     .contact-info{
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+     }
+
+     .contact-info-col{
+      width: 100%;
+     }
+
+     .contact-form-container{
+      width: 90%;
+      padding:20px 10px;
+    }
+    
+    .contact-form-container h2{
+      font-size: 30px;
+    }
+
+    .contact_form_fields{
+      flex-direction: column;
+    }
+
+    .contact_form_fields .input_field {
+      font-size: 16px;
+    }
+
+    .contact-form-btn .contact-btn {
+      font-size: 16px;
+    }
+
+    .contact-info-content .contact-info-text{
+      line-break: anywhere;
+    }
+
+
+    /* Error page */
+
+    .error-content{
+      width: 80%;
+    }
+
+    .error-btn h2{
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+    
+
+
+
+   }
+
+   @media (min-width:480px) and (max-width:768px){
+    .header{
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .nav{
+      margin-left:unset;
+    }
+
+
+    /* Home page */
+
+    
+    
+
+    .home-inner{
+      flex-direction: column;
+      padding: 50px 10px;
+      gap: 70px;
+    }
+
+    .home-content,.home-image{
+      width: 100%;
+    }
+
+
+    /* weather page */
+
+    .weather-page{
+      height: 100%;
+    }
+
+    .weather-container{
+      width: 90%;
+      padding-bottom: 50px;
+    }
+
+
+
+    .weather-input{
+      width: 100%;
+     }
+
+     .weather-info{
+      flex-direction: column;
+     }
+
+     .weather-mood{
+      text-align: center;
+     }
+
+     .weather-temp{
+      text-align: center;
+     }
+
+    .weather-extra-info{
+      align-items: center;
+      margin-top: 30px;
+    }
+
+     .weather-footer{
+      grid-template-columns: repeat(2,1fr);
+      
+    }
+
+    .w-footer-col{
+      justify-content: center;
+    }
+
+
+     /* Register page */
+
+    .common-page-container{
+      padding-bottom: 50px;
+    }
+
+    .common-page-inner{
+      width: 80%;
+    }
+
+    .flex-container{
+      flex-direction: column-reverse;
+    }
+
+    .form-cols{
+      width: 100%;
+     }
+
+     .form-btn{
+        width: 60%;
+        margin: auto;
+     }
+
+     .submit-form-btn{
+      width: 100%;
+      
+     }
+
+     
+     /* Contact page */
+
+     .contact-info{
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+     }
+
+     .contact-info-col{
+      width: 100%;
+     }
+
+     .contact-form-container{
+      width: 80%;
+      padding:25px;
+    }
+    
+    .contact-form-container h2{
+      font-size: 30px;
+    }
+
+    .contact_form_fields{
+      flex-direction: column;
+    }
+
+
+     /* Error page */
+
+     .error-content{
+      width: 90%;
+    }
+     
+
+   }
+
+
+   @media (min-width:768px) and (max-width:960px){
+    .header{
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .nav{
+      margin-left:unset;
+    }
+
+
+    /* Home page */
+
+    
+
+    .home-inner{
+      flex-direction: column;
+      padding: 50px 10px;
+      gap: 70px;
+    }
+
+    .home-content,.home-image{
+      width: 100%;
+    }
+
+
+    /* weather page */
+
+    .weather-page{
+      height: 100%;
+    }
+
+    .weather-container{
+      width: 90%;
+      padding-bottom: 50px;
+    }
+
+    .weather-input{
+      width: 100%;
+     }
+
+     /* Register page */
+
+    .common-page-container{
+      padding-bottom: 50px;
+    }
+
+    .common-page-inner{
+      width: 80%;
+    }
+
+    .flex-container{
+      flex-direction: column-reverse;
+    }
+
+    .form-cols{
+      width: 100%;
+     }
+
+     .form-image{
+      text-align: center;
+      
+     }
+     .form-image img{
+      width: 70%;
+     }
+
+     .form-btn{
+      width: 60%;
+      margin: auto;
+   }
+
+   .submit-form-btn{
+    width: 100%;
+    
+   }
+
+   /* contact page */
+
+   .contact-info{
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+   }
+
+   .contact-info-col{
+    width: 100%;
+   }
+
+   .contact-form-container{
+    width: 90%;
+   
+  }
+
+
+   /* Error page */
+
+   .error-content{
+    width: 90%;
+  }
+
+   }
+
+
+   @media (min-width:960px) and (max-width:1200px){
+
+
+    /* Home page */
+
+    
+
+    .home-image img{
+      width: 70%;
+    }
+
+
+    /* Register page */
+
+    .common-page-inner{
+      width: 80%;
+      
+     }
+
+     /* contact page */
+
+     .contact-info{
+      flex-direction: column;
+      gap: 20px;
+      width: 50%;
+     }
+  
+     .contact-info-col{
+      width: 100%;
+     }
+
+   .contact-form-container{
+    width: 80%;
+   
+  }
+
+   }
+
+
+   @media (min-width:1200px) and (max-width:1500px){
+
+    .contact-info{
+      width: 95%;
+    }
+
+   }
+
+
+
