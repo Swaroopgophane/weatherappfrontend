@@ -28,8 +28,9 @@ const Login = () => {
 
       const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/signin`,{
         method:"POST",
-        credentials:"same-origin",
+        credentials:"include",
         headers:{
+          "Accept": "application/json",
           "Content-Type" : "application/json"
         },
         body:JSON.stringify({
