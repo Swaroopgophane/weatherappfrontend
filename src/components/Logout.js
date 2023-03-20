@@ -13,10 +13,8 @@ const Logout = () => {
         fetch(`${process.env.REACT_APP_BACKEND_URL}/logout`,{
             method:"GET",
             headers:{
-                Accept:"application/json",
                 "Content-Type":"application/json"
-            },
-            credentials:"include"
+            } 
         }).then((res) => {
             dispatch({type:"USER", payload:false});
             navigate('/login',{ replace: true });
