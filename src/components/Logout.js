@@ -12,7 +12,9 @@ const Logout = () => {
     useEffect(()=>{
         fetch(`${process.env.REACT_APP_BACKEND_URL}/logout`,{
             method:"GET",
+            credentials:"include",
             headers:{
+                "Accept": "application/json",
                 "Content-Type":"application/json"
             } 
         }).then((res) => {

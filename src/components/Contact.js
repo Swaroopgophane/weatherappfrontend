@@ -14,7 +14,9 @@ const Contact = () => {
     try{
       const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/getuserInfo`,{
         method:"GET",
-        headers:{                                 // process to get data from cookies or backend
+        credentials:"include",
+        headers:{
+          "Accept": "application/json",                    // process to get data from cookies or backend
           "Content-Type":"application/json"
         },
       });
@@ -58,7 +60,9 @@ const Contact = () => {
 
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`,{
       method:"POST",
+      credentials:"include",
       headers:{
+        "Accept": "application/json",
         "Content-Type" : "application/json"
       },
       body:JSON.stringify({

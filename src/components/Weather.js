@@ -12,7 +12,14 @@ const Weather = () => {
 
   const callWeatherPage = async () =>{
     try{
-      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/weather`);
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/weather`,{
+        method:"GET",
+        credentials:"include",
+        headers:{
+          "Accept": "application/json",                    // process to get data from cookies or backend
+          "Content-Type":"application/json"
+        },
+      });
       
       await res.json();
 
