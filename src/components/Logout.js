@@ -19,6 +19,7 @@ const Logout = () => {
             } 
         }).then((res) => {
             dispatch({type:"USER", payload:false});
+            localStorage.removeItem('RWVALIDID');
             navigate('/login',{ replace: true });
             if(res.status !== 200){
                 console.log("Logout error");

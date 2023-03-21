@@ -44,6 +44,7 @@ const Login = () => {
         window.alert("Invalid Details");
       }else{
         dispatch({type:"USER", payload:true});
+        localStorage.setItem('RWVALIDID',JSON.stringify('true'));
         window.alert("Login successfully");
         navigate('/');
       }
